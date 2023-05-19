@@ -1,0 +1,261 @@
+body {
+  background-color: cyan;
+}
+
+#exterior-cabeza {
+  width: 1000px;
+  margin: 0 auto;
+  margin-top: 20px;
+  transform: scale(90%);
+}
+
+.cara {
+  height: 1000px;
+  width: 800px;
+  background-color: #D4A87F;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+#sombra-ojos-1 {
+  height: 100px;
+  width: 220px;
+  background-color: #99775E;
+  border-radius: 50%;
+  position: relative;
+  left: 150px;
+  bottom: 260px;
+}
+
+#sombra-ojos-2 {
+  height: 100px;
+  width: 220px;
+  background-color: #99775E;
+  border-radius: 50%;
+  position: relative;
+  bottom: 360px;
+  left: 490px;
+}
+
+.ojos {
+  height: 100px;
+  width: 220px;
+  background-color: white;
+  border-radius: 50%;
+  float: left;
+  left: -30px;
+  position: relative;
+  bottom: 120px;
+}
+
+.pupilas {
+  height: 100px;
+  width: 100px;
+  background-color: #3A3227;
+  border-radius: 50%;
+  float: left;
+  position: relative;
+  left: 60px;
+}
+
+#ceja-1 {
+  height: 40px;
+  width: 230px;
+  background-color: black;
+  border-radius: 50%;
+  left: 130px;
+  bottom: 240px;
+  position: relative;
+}
+
+#ceja-2 {
+  height: 40px;
+  width: 230px;
+  background-color: black;
+  border-radius: 50%;
+  left: 470px;
+  bottom: 280px;
+  position: relative;
+}
+
+#nariz {
+  width: 0;
+  height: 0;
+  border-bottom: 150px solid #99775E;
+  border-right: 150px solid transparent;
+  position: relative;
+  bottom: 350px;
+  left: 400px;
+  transform: scale(110%);
+}
+
+#boca {
+  height: 32px;
+  width: 250px;
+  background-color: #99775E;
+  border-radius: 50%;
+  left: 280px;
+  bottom: 280px;
+  position: relative;
+  transform: scale(110%);
+}
+
+#oreja-1 {
+  height: 300px;
+  width: 150px;
+  background-color: #D4A87F;
+  border-radius: 50%;
+  left: -100px;
+  transform: rotate(-10deg);
+  position: relative;
+  top: 400px;
+}
+
+#oreja-2 {
+  height: 300px;
+  width: 150px;
+  background-color: #D4A87F;
+  border-radius: 50%;
+  left: 740px;
+  transform: rotate(10deg);
+  position: relative;
+  top: 100px;
+}
+
+#sombra-oreja-1 {
+  height: 200px;
+  width: 100px;
+  background-color: #99775E;
+  border-radius: 50%;
+  transform: rotate(-2,5deg);
+  position: relative;
+  top: 25px;
+  left: 25px;
+}
+
+#sombra-oreja-2 {
+  height: 200px;
+  width: 100px;
+  background-color: #99775E;
+  border-radius: 50%;
+  transform: rotate(2,5deg);
+  position: relative;
+  top: 25px;
+  left: 25px;
+}
+
+#pendiente-1 {
+  height: 75px;
+  width: 40px;
+  background-color: black;
+  border-radius: 50%;
+  transform: rotate(2,5deg);
+  position: relative;
+  left: 55px;
+  top: 80px;
+}
+
+#pendiente-2 {
+  height: 75px;
+  width: 40px;
+  background-color: black;
+  border-radius: 50%;
+  transform: rotate(2,5deg);
+  position: relative;
+  left: 65px;
+  top: 80px;
+}
+
+#pelo-1 {
+  height: 500px;
+  width: 250px;
+  background-color: black;
+  border-radius: 50%;
+  left: 650px;
+  transform: rotate(-15deg);
+  position: relative;
+  z-index: 0;
+  float: left;
+}
+
+#pelo-2 {
+  height: 500px;
+  width: 250px;
+  background-color: black;
+  border-radius: 50%;
+  left: -150px;
+  transform: rotate(15deg);
+  position: relative;
+  z-index: 1;
+  float: left;
+}
+
+#pelo-3 {
+  height: 300px;
+  width: 700px;
+  background-color: black;
+  border-radius: 150% 44% 43% 150% / 100% 100% 100% 100%  ;
+  left: 180px;
+  top: -570px;
+  transform: rotate(5deg);
+  position: relative;
+  z-index: 3;
+  float: left;
+}
+
+.like {
+  position: absolute;
+}
+
+:root {
+  --size: 100px;
+  --frames: 62;
+}
+
+input {
+  display: none;
+}
+
+.like {
+  cursor: pointer;
+  border-radius: 999px;
+  overflow: visible;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.corazon {
+  background-image: url('https://assets.codepen.io/23500/Hashflag-DragonBall.svg');
+  background-size: calc(var(--size) * var(--frames)) var(--size);
+  background-repeat: no-repeat;
+  background-position-x: calc(var(--size) * (var(--frames) * -1 + 2));
+  background-position-y: calc(var(--size) * 0.02);
+  width: var(--size);
+  height: var(--size);
+  position: absolute;
+}
+
+input:checked + .corazon {
+  animation: like 1s steps(calc(var(--frames) - 3));
+  animation-fill-mode: forwards;
+}
+
+@keyframes like {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: calc(var(--size) * (var(--frames) * -1 + 3));
+  }
+}
+
+@media (hover: hover) {
+  .like:hover {
+    background-color: cyan;
+    .hearth {
+      background-position-x: calc(var(--size) * (var(--frames) * -1 + 1));
+    }
+  }
+}
